@@ -4,11 +4,14 @@ on:
   push:
   workflow_dispatch:
 
+
 jobs:
   check-semantics:
     name: Replicating error
     runs-on: ubuntu-latest
-    permissions: {}
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: debug
         uses: GarnerCorp/super-duper-lamp@main
