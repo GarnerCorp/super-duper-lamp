@@ -15,4 +15,36 @@ jobs:
     steps:
       - name: debug
         uses: GarnerCorp/super-duper-lamp@main
+      - name: Debug
+        run: |
+          hostname -i
+          ip -4 addr list
 
+      - name: Checkout Configuration
+        if: false
+        uses: actions/checkout@v4
+
+      - name: Debug
+        run: |
+          hostname -i
+          ip -4 addr list
+
+      - name: Authenticate to Google Cloud
+        id: auth-work-identity
+        if: false
+        uses: "google-github-actions/auth@v2"
+
+      - name: Debug
+        run: |
+          hostname -i
+          ip -4 addr list
+
+      - name: Sending Config to a Backend
+        if: false
+        uses: GarnerCorp/semantic-config-validator@debug
+
+      - name: Debug
+        if: always()
+        run: |
+          hostname -i
+          ip -4 addr list
