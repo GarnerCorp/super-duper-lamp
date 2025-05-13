@@ -1,0 +1,12 @@
+name: Replicating error
+author: 'GarnerCorp'
+description: 'Test'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: debug
+      shell: bash
+      run: |
+        set -x
+        $GITHUB_ACTION_PATH/action.sh
